@@ -6,3 +6,6 @@ _putchar.c
 
 # ignore file 2-main.c
 2-main.c
+
+# ignore file 3-main.c
+3-main.c
