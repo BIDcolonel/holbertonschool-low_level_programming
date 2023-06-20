@@ -1,2 +1,5 @@
 # ignore file _putchar.c
 _putchar.c
+
+# ignore file 1-main.c
+1-main.c
