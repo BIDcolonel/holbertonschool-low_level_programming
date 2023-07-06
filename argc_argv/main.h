@@ -7,5 +7,6 @@
 #include <unistd.h>
 #include <ctype.h>
 int _putchar(char c);
+int is_positive_number(const char *str __attribute__((unused)));
 
 #endif
