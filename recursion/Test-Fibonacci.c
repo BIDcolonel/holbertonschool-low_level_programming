@@ -59,7 +59,7 @@ long long int fibonacci(int n)
 	}
 
 /**
- * Base case: F(0) = 0, F(1) = 1
+ * Base case: F(1) = 1, F(2) = 1
  */
 	if (n <= 2)
 	{
