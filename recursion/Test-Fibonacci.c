@@ -84,6 +84,6 @@ int main(void)
 {
 	long long int result = fibonacci(1000000);
 
-	printf("%lld\n", result);
+	printf("%d\n", result);
 	return (0);
 }
