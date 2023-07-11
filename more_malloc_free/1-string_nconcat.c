@@ -38,6 +38,29 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
+ * _strncpy - copies a string
+ * @dest: destination string
+ * @src: source string
+ * @n: the maximum number of bytes to copied from src
+ * Return: a pointer to the resulting string dest
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int index = 0, src_len = 0;
+
+	while (src[index++])
+		src_len++;
+
+	for (index = 0; src[index] && index < n; index++)
+		dest[index] = src[index];
+
+	for (index = src_len; index < n; index++)
+		dest[index] = '\0';
+
+	return (dest);
+}
+
+/**
  * _strcat - concatenates two strings
  * @dest: destination string
  * @src: source string
@@ -89,12 +112,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= len2)
 		n = len2;
 
-	concat = malloc(sizeof(char) * (len1 + len2) + 1);
+	concat = malloc((len1 + n + 1) * sizeof(char));
 	if (concat == NULL)
 		return (NULL);
 
 	_strcpy(concat, s1);
-	_strcat(concat + len1, s2);
+	_strncpy(concat + len1, s2, n);
+	concat[len1 + n] = '\0';
 
 	return (concat);
 }
