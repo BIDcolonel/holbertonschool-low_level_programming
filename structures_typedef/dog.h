@@ -2,16 +2,19 @@
 #define DOG_H
 
 /**
- * struct og - define a new type struct dog with the following elements
- * @name: type = char *
- * @age: type = float
- * @owner: type = char *
+ * struct dog - Represents a dog.
+ * @name: The name of the dog.
+ * @age: The age of the dog.
+ * @owner: The owner of the dog.
+ *
+ * Description: This structure represents a dog and stores information about its name,
+ *              age, and owner.
  */
 struct dog
 {
-	char *name;
-	float age;
-	char *owner;
+    char *name;
+    float age;
+    char *owner;
 };
 
 #endif
