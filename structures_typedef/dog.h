@@ -8,13 +8,13 @@
  * @owner: The owner of the dog.
  *
  * Description: This structure represents a dog and stores information about its name,
- *              age, and owner.
+ * age, and owner.
  */
 struct dog
 {
-    char *name;
-    float age;
-    char *owner;
+	char *name;
+	float age;
+	char *owner;
 };
 
 #endif
