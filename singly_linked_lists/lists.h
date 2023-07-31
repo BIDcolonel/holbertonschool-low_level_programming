@@ -1,6 +1,10 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+/** standard library*/
+#include <stdio.h>
+#include <stddef.h>
+
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -11,9 +15,12 @@
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
-#endif
+/** prototype function*/
+size_t print_list(const list_t *h);
+
+#endif /**LISTS_H*/
