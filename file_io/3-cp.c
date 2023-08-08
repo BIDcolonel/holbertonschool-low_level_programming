@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		print_error_exit(98, "Error: Can't read from file %s\n", argv[1]);
 
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR |
-			S_IRGRP | S_IROTH);
+			S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd_to == -1)
 		print_error_exit(99, "Error: Can't write to %s\n", argv[2]);
 
