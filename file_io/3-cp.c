@@ -1,3 +1,4 @@
+#include <sys/stat.h>
 #include "main.h"
 
 /**
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, bytes_read, bytes_written;
 	char buffer[1024];
+	struct stat st;
 
 	if (argc != 3)
 		print_error_exit(97, "Usage: cp file_from file_to\n", "");
@@ -45,11 +47,17 @@ int main(int argc, char *argv[])
 	if (bytes_read == -1)
 		print_error_exit(98, "Error: Can't read from file %s\n", argv[1]);
 
+	if (fstat(fd_from, &st) == -1)
+		print_error_exit(100, "Error: Can't get file status for %s\n", argv[1]);
+
 	if (close(fd_from) == -1)
 		print_error_exit(100, "Error: Can't close fd %d\n", "");
 
 	if (close(fd_to) == -1)
 		print_error_exit(100, "Error: Can't close fd %d\n", "");
+
+	if (chmod(argv[2], st.st_mode) == -1)
+		print_error_exit(100, "Error: Can't change permissions of %s\n", argv[2]);
 
 	return (0);
 }
